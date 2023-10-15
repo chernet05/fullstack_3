@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.d986dc9f.css","mappings":"AAAA,OAEI,sBAGJ,CAEA,YANI,UAAY,CAEZ,WASJ,CALA,KAEI,oBAGJ","sources":["index.css"],"sourcesContent":[".green {\r\n    color: black;\r\n    border: 6px solid green;\r\n    padding: 4px;\r\n\r\n}\r\n\r\n.red {\r\n    color: black;\r\n    border: 6px solid red;\r\n    padding: 4px;\r\n\r\n}"],"names":[],"sourceRoot":""}
