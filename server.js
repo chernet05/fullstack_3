@@ -42,14 +42,14 @@ app.use(morgan(function (tokens, req, res) {
 app.use(express.json())
 app.use(morgan('tiny'))
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/build/index.html', (err) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Internal Server Error');
-        }
-    })
-})
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname + '/build/index.html', (err) => {
+//         if (err) {
+//             console.error(err);
+//             res.status(500).send('Internal Server Error');
+//         }
+//     })
+// })
 app.get('/api/data/', (req, res) => {
     res.send(data)
 })
