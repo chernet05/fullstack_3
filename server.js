@@ -1,33 +1,9 @@
 let express = require('express')
 let morgan = require('morgan')
 let app = express()
-const path = require('path');
-
 let cors = require('cors')
-app.use(express.static(path.join(__dirname, 'build')));
-
-let data = [
-    {
-        "id": 1,
-        "name": "Arto Hellas",
-        "number": "040-123456"
-    },
-    {
-        "id": 2,
-        "name": "Ada Lovelace",
-        "number": "39-44-5323523"
-    },
-    {
-        "id": 3,
-        "name": "Dan Abramov",
-        "number": "12-43-234345"
-    },
-    {
-        "id": 4,
-        "name": "Mary Poppendieck",
-        "number": "39-23-6423122"
-    }
-]
+let phones = require('./build/models/phones')
+let mongoose = require('mongoose')
 app.use(cors())
 app.use(morgan(function (tokens, req, res) {
     return [
@@ -50,8 +26,9 @@ app.use(morgan('tiny'))
 //         }
 //     })
 // })
-app.get('/api/data/', (req, res) => {
-    res.send(data)
+app.get('/api/data/', async (req, res) => {
+    const data = await phones.find({})
+    res.json(data)
 })
 app.get('/info/', (req, res) => {
     let count = data.length
